@@ -46,7 +46,7 @@ class Item:
     def string_to_number(str_number):
         """Возвращает число из строки"""
         number = str(str_number)
-        return int(float(number))
+        return float(number)
 
     def calculate_total_price(self) -> float:
         """
