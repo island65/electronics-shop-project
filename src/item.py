@@ -46,7 +46,7 @@ class Item:
     def string_to_number(str_number):
         """Возвращает число из строки"""
         number = str(str_number)
-        return int(float(number))
+        return float(number)
 
     def calculate_total_price(self) -> float:
         """
@@ -62,8 +62,5 @@ class Item:
         """
         self.price *= self.pay_rate
 
-    def __repr__(self):
-        return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
-
-    def __str__(self):
-        return f'{self.name}'
+# item1 = Item.instantiate_from_csv('items.csv')
+# print(len(Item.all))
