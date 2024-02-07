@@ -36,3 +36,14 @@ def test_string_to_number():
     """Проверка возвращения числа из строки"""
     assert Item.string_to_number('5') == 5
     assert Item.string_to_number('2.5') == 2
+
+
+item1 = Item("Смартфон", 10000, 20)
+
+
+def test_repr():
+    assert repr(item1) == "Item('Смартфон', 10000, 20)"
+
+
+def test_str():
+    assert str(item1) == 'Смартфон'
