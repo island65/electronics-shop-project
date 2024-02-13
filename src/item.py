@@ -1,6 +1,5 @@
 import csv
 
-
 class Item:
     """
     Класс для представления товара в магазине.
@@ -20,6 +19,13 @@ class Item:
         self.price = price
         self.quantity = quantity
         self.all.append(self)
+
+    def __add__(self, other):
+        """Складывает количество товаров в магазине с проверкой"""
+        if not isinstance(other, Item):
+            raise ValueError ("Можно складывать только экземпляры классов 'Phone или `Item` и их дочерние")
+        return self.quantity + other.quantity
+
 
     @property
     def name(self):
