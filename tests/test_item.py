@@ -1,4 +1,4 @@
-from src.item import Item
+from src.item import Item, InstantiateCSVError
 import pytest
 from config import PATH
 from src.phone import Phone
@@ -63,3 +63,11 @@ def test_add_error(phone, item):
         item + 2
 
 
+def test_instantiate_from_csv_not():
+    with pytest.raises(FileNotFoundError):
+        Item.instantiate_from_csv(" ")
+
+
+def test_instantiate_from_csv_error():
+    with pytest.raises(InstantiateCSVError):
+        Item.instantiate_from_csv("../src/items_2.csv")
